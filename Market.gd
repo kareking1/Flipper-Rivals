@@ -4,6 +4,7 @@ extends Node
 @export var umbrella_types = [] #for the list of genres that might get a sweeping discount
 @export var specific_types = [] #^
 @export var locations_list = [] #List of locations for the sell phase
+@export var stock = [] #list of all items
 #Might need more vars, this script might take a little bit to develop
 
 func calculate_discount_per_umbrella_genre():
