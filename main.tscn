@@ -8,12 +8,5 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-script = ExtResource("1_4sryb")
+[node name="Player" type="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_jfysq")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_28qs0")
