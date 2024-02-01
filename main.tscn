@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://tb0ukiry8m4l"]
+[gd_scene load_steps=4 format=3 uid="uid://tb0ukiry8m4l"]
+
+[ext_resource type="Script" path="res://Items/Iron Sword.gd" id="1_4sryb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfysq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28qs0"]
 
 [node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_4sryb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jfysq")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_28qs0")
