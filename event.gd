@@ -13,7 +13,7 @@ func fill_list(): #loops through the stock
 		var is_valid = false
 		var discount_list = []
 		for type in affected_types:
-			if item.umbrella_type == type:
+			if item.type == type:
 				is_valid = true
 				discount_list.append(affected_types[type])
 		for trt in affected_traits:
