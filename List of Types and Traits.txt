@@ -1,0 +1,57 @@
+Types:
+	Clothing
+	Education
+	Foods and Drinks
+	Material
+	Misc.
+	Tool
+	Warfare
+		
+Traits:
+	Armor
+	Army Management
+	Axe
+	Ball
+	Battlefield
+	Blunt
+	Bottle
+	Bow
+	Bronze
+	Casual Wear
+	Cheap
+	Clown
+	Comical
+	Dance
+	Electronics
+	Elegant
+	Expensive
+	Fancy
+	Feminine
+	First Aid
+	Golden
+	Great Sword
+	Hammer
+	Iron
+	Magic
+	Martial
+	Masculine
+	Metallic
+	Peasant
+	Polearm
+	Potions
+	Ranged Weaponry
+	Raw Material
+	Refined Material
+	Self Defense
+	Sharp
+	Shield
+	Shiny
+	Siege
+	Spear
+	Steel
+	Sword
+	Toy
+	Weird
+	Wooden
+	Unknown
+	Utility
