@@ -14,6 +14,24 @@ func _ready():
 		print(item.item_name)
 	for loc:I_Location in locations_list:
 		print(loc.location_name)
+		
+func get_item_from_game_list(i_name: String):
+	for item:I_Item in items_list:
+		if item.item_name == i_name:
+			return item
+			
+func get_item_from_stock(i_name: String):
+	for item:I_Item in stock:
+		if item.item_name == i_name:
+			return item #We also need to probably get the amount in stock
+			
+func get_location_from_list(l_name: String):
+	for location:I_Location in locations_list:
+		if location.location_name == l_name:
+			return location
+			
+func add_items_to_stock(items_amount_dict):
+	pass #Takes a dict for the items and their amount.
 
 #There's a few things this script needs to do:
 #1. Handle making the seed and therefore the rng system of the game

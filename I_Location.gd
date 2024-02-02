@@ -5,7 +5,7 @@ var base_population = 0
 var actual_population = 0
 var base_shop_setup_price = 0.0
 var actual_shop_setup_price = 0.0
-static var current_items_of_interest = []
+var current_items_of_interest = []
 
 func get_location_basic_details():
 	return "-Name: " + location_name + "\n-Population: " + actual_population + "\n-Shop Setup Price: " + actual_shop_setup_price
@@ -29,10 +29,10 @@ func set_values(loc_name: String, base_pop: int, base_shop_price: float, items_o
 	for interest in items_of_interest:
 		current_items_of_interest.append(interest)
 	
-static func get_current_interests():
+func get_current_interests():
 	return current_items_of_interest
 	
-static func set_current_interests(new_interests: Array):
+func set_current_interests(new_interests: Array):
 	current_items_of_interest.clear()
 	for interest in new_interests:
 		current_items_of_interest.append(interest)
