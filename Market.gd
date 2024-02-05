@@ -3,7 +3,7 @@ extends Node
 var seed #We'll have to find a way to implement an rng seed system
 var items_list = [] #List of all items in the game
 var locations_list = [] #List of locations for the sell phase
-var stock = [] #list of items to buy
+var stock = {} #list of items to buy
 
 #This is how we are going to have to add items I think.
 #You can click the arrow directly next to the "func" keyword to minimize the function
@@ -24,6 +24,7 @@ func get_item_from_stock(i_name: String):
 	for item:I_Item in stock:
 		if item.item_name == i_name:
 			return item #We also need to probably get the amount in stock
+	return null
 			
 func get_location_from_list(l_name: String):
 	for location:I_Location in locations_list:
