@@ -5,7 +5,7 @@ extends Node
 #if an item falls within multiple types and traits, use diminishing returns (apply highest discount and then apply the next discount on the result of the previous one)
 @export var event_name = "" #name of the event i.e. natural disaster (affects price of non-perishable foods for example), war time (affects price of weapons)
 @export var description = "" #provides context and describes what items will be affected by the event
-@export var market_stock = [] #array of all items on the market
+@export var market_stock = {} #array of all items on the market
 @export var item_list = {} #dictionary of items that fall within certain types or traits, along with their discounts
 
 func fill_list(): #loops through the stock
@@ -25,14 +25,18 @@ func fill_list(): #loops through the stock
 			item_list += {"Item Name": "value1", item:discount_list}
 			
 
-func apply_discounts(): #has placeholder code, will apply sales percentages to items of the types affected by this event
+func apply_discounts(): #has placeholder code, will apply sales percentages to items of the types affected by this event and return 
 	for type in affected_types:
 		print(type)
 		
 
-func _init(e_name:String, a_types:Dictionary, a_traits:Dictionary, desc:String, stock:Array):
+func _init(e_name:String, a_types:Dictionary, a_traits:Dictionary, desc:String, stock:Dictionary):
 	event_name = e_name
 	affected_types = a_types
 	affected_traits = a_traits
 	description = desc
+	market_stock = stock
+	fill_list()
+	
+func update_stock(stock:Dictionary):
 	market_stock = stock
