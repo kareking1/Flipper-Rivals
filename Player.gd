@@ -10,4 +10,3 @@ func add(item: I_Item, amount: int = 1):
 func pay_loan(pay_amount: int):  
 	gold -= pay_amount
 	loan += pay_amount
-

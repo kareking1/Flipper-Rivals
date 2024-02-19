@@ -10,10 +10,11 @@ var stock = {} #list of items to buy
 func _ready():
 	items_list.append(Iron_Sword.new())
 	locations_list.append(Montreal.new())
-	var temp_items_dic = {Iron_Sword: 2}
-	temp_items_dic[T_I] = 1
-	add_items_to_stock(temp_items_dic)
-	print(stock)
+	var temp_items_dic = {'Iron_Sword': 2}
+	#temp_items_dic[T_I] = 1
+	#add_items_to_stock(temp_items_dic)
+	#print(stock)
+	print(temp_items_dic)
 	#for item:I_Item in items_list:
 		#print(item.item_name)
 	#for loc:I_Location in locations_list:
@@ -37,6 +38,8 @@ func get_location_from_list(l_name: String):
 			
 func add_items_to_stock(items_amount_dict:Dictionary):
 	stock = items_amount_dict
+	
+#func reduce_item_amount(item_name)
 
 #There's a few things this script needs to do:
 #1. Handle making the seed and therefore the rng system of the game
