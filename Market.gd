@@ -1,6 +1,6 @@
 extends Node
 
-var seed #We'll have to find a way to implement an rng seed system
+var seed = rngsystem.generate_seed() #We'll have to find a way to implement an rng seed system
 var items_list = [] #List of all items in the game
 var locations_list = [] #List of locations for the sell phase
 var stock = {} #list of items to buy
@@ -19,6 +19,8 @@ func _ready():
 	items_list.append(Spoon.new())
 	items_list.append(Tungsten_Cube.new())
 	locations_list.append(Montreal.new())
+
+
 	var temp_items_dic = {'Iron_Sword': 2}
 	#temp_items_dic[T_I] = 1
 	#add_items_to_stock(temp_items_dic)
@@ -31,6 +33,7 @@ func _ready():
 	generate_buttons()
 	#for _i in self.get_children():
 		#print(_i)
+
 func get_item_from_game_list(i_name: String):
 	for item:I_Item in items_list:
 		if item.item_name == i_name:
