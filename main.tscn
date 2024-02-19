@@ -1,27 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cesbq5gwb3ck2"]
 
-[ext_resource type="Script" path="res://Market.gd" id="1_4v87h"]
-[ext_resource type="Script" path="res://rng.gd" id="2_o41hs"]
-[ext_resource type="Script" path="res://Save.gd" id="3_m8ua4"]
+
+[ext_resource type="PackedScene" uid="uid://bhm3gdl6faown" path="res://market.tscn" id="1_164c5"]
 
 [node name="main" type="Node2D"]
 
-[node name="Market" type="Node2D" parent="."]
-script = ExtResource("1_4v87h")
+[node name="Market" parent="." instance=ExtResource("1_164c5")]
 
-[node name="rng" type="Node2D" parent="."]
-script = ExtResource("2_o41hs")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Save" type="FileDialog" parent="Control"]
-script = ExtResource("3_m8ua4")
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0

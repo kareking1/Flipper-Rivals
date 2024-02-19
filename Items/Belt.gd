@@ -1,5 +1,5 @@
 extends I_Item
-class_name T_I
+class_name Belt
 func _init():
-	set_values("", 0.0, "", ["", ""])
+	set_values("Belt", 150.0, "Clothing", ["Expensive", "Elegant"])
 

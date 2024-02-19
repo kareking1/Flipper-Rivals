@@ -1,5 +1,5 @@
 extends I_Item
-class_name T_I
+class_name Tungsten_Cube
 func _init():
-	set_values("", 0.0, "", ["", ""])
+	set_values("Tungsten Cube", 100.0, "Misc.", ["Metallic", "Shiny", "Toy"])
 

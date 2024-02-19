@@ -1,5 +1,5 @@
 extends I_Item
-class_name T_I
+class_name Airhorn
 func _init():
-	set_values("", 0.0, "", ["", ""])
+	set_values("Air Horn", 30.0, "Misc.", ["Clown", "Weird"])
 
