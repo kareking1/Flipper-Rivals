@@ -19,14 +19,18 @@ func _ready():
 	items_list.append(Spoon.new())
 	items_list.append(Tungsten_Cube.new())
 	locations_list.append(Montreal.new())
-	for item:I_Item in items_list:
-		print(item.item_name)
-	for loc:I_Location in locations_list:
-		print(loc.location_name)
+	var temp_items_dic = {'Iron_Sword': 2}
+	#temp_items_dic[T_I] = 1
+	#add_items_to_stock(temp_items_dic)
+	#print(stock)
+	print(temp_items_dic)
+	#for item:I_Item in items_list:
+		#print(item.item_name)
+	#for loc:I_Location in locations_list:
+		#print(loc.location_name)
 	generate_buttons()
 	#for _i in self.get_children():
 		#print(_i)
-		
 func get_item_from_game_list(i_name: String):
 	for item:I_Item in items_list:
 		if item.item_name == i_name:
@@ -42,10 +46,12 @@ func get_location_from_list(l_name: String):
 	for location:I_Location in locations_list:
 		if location.location_name == l_name:
 			return location
-			
-func add_items_to_stock(items_amount_dict):
-	pass #Takes a dict for the items and their amount.
+
+func add_items_to_stock(items_amount_dict:Dictionary):
+	stock = items_amount_dict
 	
+#func reduce_item_amount(item_name)
+
 func list_to_string(item:I_Item):
 	var list_str = ""
 	for trt in item.traits_list:
