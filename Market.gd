@@ -1,16 +1,16 @@
 extends Node
 
-var seed #We'll have to find a way to implement an rng seed system
+var seed = rngsystem.generate_seed() #We'll have to find a way to implement an rng seed system
 var stock = {} #list of items to buy
 
 #This is how we are going to have to add items I think.
 #You can click the arrow directly next to the "func" keyword to minimize the function
 func _ready():
-	#I moved the list of items and locations to Utility, only stock will be here
 	util.initialize_static_vars()
 	generate_buttons()
 	#for _i in self.get_children():
 		#print(_i)
+
 func get_item_from_game_list(i_name: String):
 	for item:I_Item in global.items_list:
 		if item.item_name == i_name:
