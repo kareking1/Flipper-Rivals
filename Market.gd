@@ -1,6 +1,6 @@
 extends Node
 
-var seed #We'll have to find a way to implement an rng seed system
+var seed = rngsystem.generate_seed() #We'll have to find a way to implement an rng seed system
 var items_list = [] #List of all items in the game
 var locations_list = [] #List of locations for the sell phase
 var stock = {} #list of items to buy
@@ -14,7 +14,7 @@ func _ready():
 		print(item.item_name)
 	for loc:I_Location in locations_list:
 		print(loc.location_name)
-		
+	
 func get_item_from_game_list(i_name: String):
 	for item:I_Item in items_list:
 		if item.item_name == i_name:
