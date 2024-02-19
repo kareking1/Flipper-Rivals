@@ -1,5 +1,5 @@
 extends I_Item
-class_name T_I
+class_name Action_Figure
 func _init():
-	set_values("", 0.0, "", ["", ""])
+	set_values("Action Figure", 20.0, "Misc.", ["Toy", "Cheap"])
 

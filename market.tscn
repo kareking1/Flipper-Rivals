@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhm3gdl6faown"]
+
+[ext_resource type="Script" path="res://Market.gd" id="1_j2w8p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fto8g"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Market" type="Node2D"]
+script = ExtResource("1_j2w8p")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 175.0
+offset_top = 116.0
+offset_right = 215.0
+offset_bottom = 156.0
+
+[node name="Textbox" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Textbox"]
+layout_direction = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Textbox/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fto8g")
+
+[node name="MarginContainer" type="MarginContainer" parent="Textbox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Textbox/MarginContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Textbox/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Textbox/MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2

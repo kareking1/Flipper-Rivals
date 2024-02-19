@@ -1,5 +1,5 @@
 extends I_Item
-class_name T_I
+class_name Monitor
 func _init():
-	set_values("", 0.0, "", ["", ""])
+	set_values("Monitor", 200.0, "Tool", ["Electronics", "Utility"])
 
