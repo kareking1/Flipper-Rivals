@@ -3,6 +3,7 @@ Types:
 	Education
 	Foods and Drinks
 	Material
+	Medicine
 	Misc.
 	Tool
 	Warfare
@@ -10,6 +11,7 @@ Types:
 Traits:
 	Armor
 	Army Management
+	Art
 	Axe
 	Ball
 	Battlefield
@@ -28,6 +30,7 @@ Traits:
 	Fancy
 	Feminine
 	First Aid
+	Gold
 	Golden
 	Great Sword
 	Hammer
@@ -41,8 +44,6 @@ Traits:
 	Polearm
 	Potions
 	Ranged Weaponry
-	Raw Material
-	Refined Material
 	Self Defense
 	Sharp
 	Shield
@@ -52,7 +53,7 @@ Traits:
 	Steel
 	Sword
 	Toy
-	Weird
-	Wooden
 	Unknown
 	Utility
+	Weird
+	Wooden
