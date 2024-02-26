@@ -32,7 +32,7 @@ script = ExtResource("1_8e7rl")
 
 [node name="MarginContainer" type="MarginContainer" parent="Top_Screen"]
 layout_direction = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -189.0
@@ -54,7 +54,8 @@ label_settings = SubResource("LabelSettings_f3q0u")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-visible_ratio = -0.015873
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Buy_Phase_Transition" type="Label" parent="Top_Screen/MarginContainer"]
 visible = false
