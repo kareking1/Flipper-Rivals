@@ -25,3 +25,13 @@ func set_values(i_name:String, base_v:float, typ:String, traits:Array):
 	type = typ
 	for trt:String in traits:
 		traits_list.append(trt)
+		
+
+func traits_to_string():
+	var trait_str = ""
+	for trt in traits_list:
+		trait_str += "[" + trt + "] "
+	return trait_str
+
+func item_to_string():
+	return item_name + "\nType: " + type + "\nTraits: " + traits_to_string() + "\nPrice: $" + str(base_value).pad_decimals(2)

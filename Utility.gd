@@ -1,3 +1,4 @@
+extends Node2D
 class_name Utility
 #Everything should be static in this class
 static var items_list = [] #List of all items in the game
@@ -28,16 +29,7 @@ static func initialize_static_vars():
 #MIGHT NOT BE NEEDED IN THE END!!!
 #This func is unfortunately a work around due to the fact that you
 #can't really put custom classes in the keys of dictionaries (will become null)
-static func get_item_class_from_item_names(item_name: String):
-	match item_name:
-		"Action Figure": return Action_Figure
-		"Air Horn": return Airhorn
-		"Ballista": return Ballista
-		"Belt": return Belt
-		"Iron Sword": return Iron_Sword
-		"Monitor": return Monitor
-		"Paddle": return Paddle
-		"Potion of Rigidity": return Potion_of_Rigidity
-		"Spoon": return Spoon
-		"Tungsten Cube": return Tungsten_Cube
-		_: return null
+static func get_item_from_name(item_name: String):
+	for item:I_Item in items_list:
+		if item_name == item.item_name:
+			return item
