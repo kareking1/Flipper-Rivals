@@ -30,7 +30,7 @@ func set_values(i_name:String, base_v:float, typ:String, traits:Array):
 func traits_to_string():
 	var trait_str = ""
 	for trt in traits_list:
-		trait_str += "[" + trt + "] "
+		trait_str += "[" + trt + "], "
 	return trait_str
 
 func item_to_string():
