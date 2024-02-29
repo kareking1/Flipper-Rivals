@@ -34,16 +34,27 @@ func _process(_delta):
 		ongoing_sell_phase()
 	if is_selling_time:
 		if rng_system.is_item_sold(Player.sell_chance_multiplier) and Player.current_item_to_be_sold != null:
-			Player.sell_item(Player.current_item_to_be_sold.item_name, Player.current_item_to_be_sold.base_value * Player.location_chosen.sell_multiplier)
+			Player.sell_item(Player.current_item_to_be_sold.item_name, Player.current_item_to_be_sold.actual_value * Player.location_chosen.sell_multiplier)
 			prepare_item_to_be_sold()
 
 func start_game():
 	game_start_screen.visible = false
 	game_start_button.disabled = true
 	game_start_button.visible = false
-	start_buy_phase()
+	handle_events()
+	
+func handle_events():
+	event_handler.set_event()
+	event_info.text = event_handler.get_event_text()
+	event_info.visible = true
+	event_handler.execute_event()
+	timer.start(10)
+	timer.timeout.connect(
+		start_buy_phase, 4
+	)
 	
 func start_buy_phase():
+	event_info.visible = false
 	buy_phase_transition.visible = true
 	timer.start(4)
 	timer.timeout.connect(
@@ -96,5 +107,5 @@ func pay_loan():
 	Player.pay_loan()
 	timer.start(3)
 	timer.timeout.connect(
-		start_buy_phase, 4
+		handle_events, 4
 	)

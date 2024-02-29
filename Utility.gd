@@ -6,7 +6,7 @@ static var locations_list = [] #List of locations
 static var events_list = [] #List of events
 
 static func sort_numerical_ascending(a, b):
-	if a[0] < b[0]:
+	if a < b:
 		return true
 	return false	
 	
