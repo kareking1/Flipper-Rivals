@@ -16,7 +16,7 @@ func get_string_items_of_interest():
 	var item
 	for item_name: String in current_items_of_interest:
 		item = util.get_item_from_name(item_name)
-		return_string += "[" + item.item_name + "], "
+		return_string += "[" + item.item_name + "] "
 	if return_string.is_empty():
 		return "No items of particular interest here!"
 	return return_string

@@ -19,3 +19,7 @@ static func get_random_item_player_inventory():
 	var generated_item_num = rng.randi_range(0, Player.inventory.size() - 1)
 	var item_name = Player.inventory.keys()[generated_item_num]
 	return util.get_item_from_name(item_name)
+	
+static func choose_random_event():
+	var generated_num = rng.randi_range(0, util.events_list.size() - 1)
+	return util.events_list[generated_num]

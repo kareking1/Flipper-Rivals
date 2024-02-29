@@ -4,7 +4,6 @@ class_name buy_phase
 static var stock = {}
 
 static func initialize_stock_test():
-	stock
 	for item: I_Item in util.items_list:
 		stock[item.item_name] = 5
 	return stock
