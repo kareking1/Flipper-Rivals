@@ -4,6 +4,10 @@ class_name Utility
 static var items_list = [] #List of all items in the game
 static var locations_list = [] #List of locations
 static var events_list = [] #List of events
+static var starting_gold = 1000 #The starting amount of gold each player has
+static var starting_loan = 2000 #The starting amount of loan each player has0
+static var starting_payment = 100 #The next payment to pay off loan
+static var payment_increase = 200 #Increment for payments
 
 static func sort_numerical_ascending(a, b):
 	if a < b:

@@ -31,11 +31,13 @@ func _process(_delta):
 	loan_display.text = "Loan Left: " + str(Player.loan) + ", Next Payment: " + str(Player.next_payment)
 	if location_chosen:
 		location_chosen = false
+		prepare_item_to_be_sold()
+	if sell_phase.finished_choosing_items:
 		ongoing_sell_phase()
-	if is_selling_time:
-		if rng_system.is_item_sold(Player.sell_chance_multiplier) and Player.current_item_to_be_sold != null:
-			Player.sell_item(Player.current_item_to_be_sold.item_name, Player.current_item_to_be_sold.actual_value * Player.location_chosen.sell_multiplier)
-			prepare_item_to_be_sold()
+	if is_selling_time and rng_system.is_item_sold():
+		var item_to_sell: I_Item = rng_system.get_random_item_player_sell_inventory()
+		if item_to_sell != null:
+			Player.sell_item(item_to_sell.item_name, item_to_sell.actual_value * Player.location_chosen.sell_multiplier)
 
 func start_game():
 	game_start_screen.visible = false
@@ -88,15 +90,16 @@ func choose_location_phase():
 	sell_phase.choose_location_phase(location_grid, textbox)
 	
 func prepare_item_to_be_sold():
-	Player.current_item_to_be_sold = rng_system.get_random_item_player_inventory()
-	sell_phase.check_item_is_interest_location()
+	player_inventory.visible = true
+	sell_phase.choose_items_to_sell(player_inventory, textbox, Player.inventory)
 
 func ongoing_sell_phase():
+	sell_phase.finished_choosing_items = false
 	sell_phase_transition.visible = false
 	location_grid.visible = false
 	location_chosen = false
+	player_inventory.visible = false
 	timer.start(15)
-	prepare_item_to_be_sold()
 	is_selling_time = true
 	timer.timeout.connect(
 		pay_loan, 4

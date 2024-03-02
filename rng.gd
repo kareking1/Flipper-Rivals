@@ -9,15 +9,15 @@ static func generate_seed():
 
 static func is_item_sold(chance_modifier: float = 1.0):
 	var generated_num = rng.randi_range(1, 10000)
-	if generated_num * chance_modifier >= 9900:
+	if generated_num * chance_modifier >= 8000:
 		return true
 	return false
 
-static func get_random_item_player_inventory():
-	if Player.inventory.is_empty():
+static func get_random_item_player_sell_inventory():
+	if Player.items_to_sell.is_empty():
 		return null
-	var generated_item_num = rng.randi_range(0, Player.inventory.size() - 1)
-	var item_name = Player.inventory.keys()[generated_item_num]
+	var generated_item_num = rng.randi_range(0, Player.items_to_sell.size() - 1)
+	var item_name = Player.items_to_sell[generated_item_num]
 	return util.get_item_from_name(item_name)
 	
 static func choose_random_event():
