@@ -1,6 +1,8 @@
 extends Node
 class_name sell_phase
 
+static var finished_choosing_items = false
+
 static func choose_location_phase(location_grid: GridContainer, textbox: Node):
 	var button
 	for child in location_grid.get_children():
@@ -26,6 +28,42 @@ static func choose_location_phase(location_grid: GridContainer, textbox: Node):
 				textbox.text = "You chose: " + location.location_name + "!\nIn a few moments, you will start selling..."
 		)
 		location_grid.add_child(button)
+
+static func choose_items_to_sell(player_inventory: GridContainer, textbox: Node, items: Dictionary):
+	var button
+	var item
+	for child in player_inventory.get_children():
+		player_inventory.remove_child(child)
+	for item_key: String in items.keys():
+		item = util.get_item_from_name(item_key)
+		button = Button.new()
+		button.text = item.item_name + "\nAmount: " + str(items[item_key])
+		button.mouse_entered.connect(
+			func():
+				textbox.text = item.item_to_string()
+		)
+		button.mouse_exited.connect(
+			func():
+				textbox.text = ""
+		)
+		button.pressed.connect(
+			func():
+				Player.toggle_item_sell(item_key)
+		)
+		player_inventory.add_child(button)
+	add_button_to_finish_choosing_items(player_inventory)
+	
+static func add_button_to_finish_choosing_items(player_inventory: GridContainer):
+	var button = Button.new()
+	button.text = "Finish choosing items"
+	button.pressed.connect(
+		func(): 
+			finish_choosing_items()
+	)
+	player_inventory.add_child(button)
+
+static func finish_choosing_items():
+	finished_choosing_items = true
 
 static func check_item_is_interest_location():
 	if Player.current_item_to_be_sold == null:
